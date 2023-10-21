@@ -5,7 +5,7 @@ struct XOrString {
 }
 
 impl XOrString {
-    pub fn from_string(text: &str) -> Self {
+    fn from_string(text: &str) -> Self {
         let encrypted_string: String = text.chars().map(|c| (c as u8 ^ KEY) as char).collect();
         XOrString {text: encrypted_string }
     }
